@@ -13,7 +13,6 @@ var marked   = require('marked');
 var renderer = new marked.Renderer();
 var _        = require('lodash');
 
-
 // Mix in the methods from underscore string
 _.mixin(require('underscore.string'));
 
@@ -24,16 +23,20 @@ hljs.registerLanguage('less', require('./lib/less.js'));
 module.exports.init = function(options) {
   options = options || {};
 
-  // See ./lib/tmpl.js
   renderer.heading = function (text, level) {
-    var output;
-    if(options.heading && options.heading.length > 0) {
+    var fallbackTemplate = './lib/tmpl.js';
+    var output, heading = options.heading;
+    if (heading && _.isString(heading) && heading.length > 0) {
       output = file.readFileSync(options.heading);
-      // Use fallback heading template when one isn't defined in options
-    } else {output = require('./lib/tmpl.js');}
-    return _.template(output, {text: text, level: level});
+    } else if (_.isFunction(heading)) {
+      output = require(heading);
+    } else {output = require(fallbackTemplate);}
+    return _.template(output, {
+      text: text,
+      name: _.slugify(text),
+      level: level
+    });
   };
-
   exports.matchesExt = function (haystack, needles) {
     needles = Array.isArray(needles) ? needles : [needles];
     needles = (needles.length > 0) ? _.unique(_.flatten(needles)).join('|') : '.*';
@@ -66,7 +69,7 @@ module.exports.init = function(options) {
           }
         }
       }
-      return '<div class="code-example">' + hljs.highlight(lang, code).value + '</div>';
+      return hljs.highlight(lang, code).value;
     },
     renderer: renderer
   };
