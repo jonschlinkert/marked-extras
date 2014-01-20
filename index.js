@@ -24,13 +24,13 @@ hljs.registerLanguage('less', require('./lib/less.js'));
 module.exports.init = function(options) {
   options = options || {};
 
-  // Heading template is found in ./assets/heading.tmpl
+  // See ./lib/tmpl.js
   renderer.heading = function (text, level) {
     var output;
-    if(options.marked.headings && options.marked.headings.length > 0) {
-      output = file.readFileSync(options.marked.headings);
+    if(options.heading && options.heading.length > 0) {
+      output = file.readFileSync(options.heading);
       // Use fallback heading template when one isn't defined in options
-    } else {output = require('./lib/tmpl');}
+    } else {output = require('./lib/tmpl.js');}
     return _.template(output, {text: text, level: level});
   };
 
