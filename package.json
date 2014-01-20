@@ -1,0 +1,46 @@
+{
+  "name": "marked-extras",
+  "description": "Extras for marked.js. Utils, language definitions, templates for custom headings and sensible defaults.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/marked-extras",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonschlinkert/marked-extras.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/marked-extras/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/marked-extras/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "marked": "~0.3.0",
+    "underscore.string": "~2.3.3",
+    "highlight.js": "~8.0.0",
+    "lodash": "~2.4.1",
+    "fs-utils": "~0.1.9"
+  },
+  "keywords": [
+    "convert markdown",
+    "gfm markdown",
+    "gfm",
+    "github markdown",
+    "handlebars helper",
+    "handlebars",
+    "helper",
+    "highlight.js",
+    "markdown headings",
+    "markdown to html",
+    "markdown",
+    "marked",
+    "md"
+  ]
+}
