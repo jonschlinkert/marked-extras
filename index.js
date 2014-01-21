@@ -20,17 +20,21 @@ _.mixin(require('underscore.string'));
 var LANGUAGE_MAP = require('./lib/lang.js');
 
 module.exports.init = function(options) {
-
   var languages = _.extend(LANGUAGE_MAP, options.languages);
 
-  // See ./lib/tmpl.js
   renderer.heading = function (text, level) {
     var tmpl = require('./lib/tmpl.js');
     if(options.heading && options.heading.length > 0) {
+
       // Override the default heading template
       tmpl = file.readFileSync(options.heading);
     }
-    return _.template(tmpl, {text: text, level: level});
+
+    return _.template(tmpl, {
+      text: text,
+      level: level,
+      name: _.slugify(text)
+    });
   };
 
   hljs.configure({
