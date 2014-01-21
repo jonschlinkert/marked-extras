@@ -52,7 +52,6 @@ module.exports.init = function(options) {
     smartypants: false,
 
     highlight: function (code, lang) {
-      console.log(languages[lang]);
       try {
         if (languages[lang]) {
           lang = languages[lang];
