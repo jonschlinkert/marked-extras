@@ -9,24 +9,33 @@
 // node_modules
 var file         = require('fs-utils');
 var hljs         = require('highlight.js');
+var _            = require('lodash');
 var marked       = require('marked');
 var renderer     = new marked.Renderer();
-var _            = require('lodash');
 
 // Mix in the methods from underscore string
 _.mixin(require('underscore.string'));
 
-// Local libs
+/**
+ * Local libs
+ */
+
 var LANGUAGE_MAP = require('./lib/lang.js');
 
-module.exports.init = function(options) {
-  var languages = _.extend(LANGUAGE_MAP, options.languages);
 
+
+module.exports.init = function(options) {
+  var languages = _.extend({}, LANGUAGE_MAP, options.languages);
+
+
+  /**
+   * marked.js renderer
+   */
   renderer.heading = function (text, level) {
     var tmpl = require('./lib/tmpl.js');
     if(options.heading && options.heading.length > 0) {
 
-      // Override the default heading template
+      // If defined in options, override the default heading template
       tmpl = file.readFileSync(options.heading);
     }
 
@@ -68,7 +77,7 @@ module.exports.init = function(options) {
       }
     }
   };
-  exports.markedDefaults = _.extend(defaults, options);
 
+  exports.markedDefaults = _.extend({}, defaults, options);
   return exports;
 };
