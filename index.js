@@ -1,32 +1,24 @@
 /**
- * Marked Extras
+ * marked-extras <https://github.com/jonschlinkert/marked-extras>
+ *
  * Copyright (c) 2014 Jon Schlinkert
  * Licensed under the MIT License (MIT).
  */
 
-'use strict';
+const hljs         = require('highlight.js');
+const _            = require('lodash');
+const marked       = require('marked');
+const renderer     = new marked.Renderer();
 
-// node_modules
-var file         = require('fs-utils');
-var hljs         = require('highlight.js');
-var _            = require('lodash');
-var marked       = require('marked');
-var renderer     = new marked.Renderer();
+const LANGUAGE_MAP = require('./lib/lang.js');
 
 // Mix in the methods from underscore string
 _.mixin(require('underscore.string'));
 
-/**
- * Local libs
- */
-
-var LANGUAGE_MAP = require('./lib/lang.js');
-
-
 
 module.exports.init = function(options) {
+  options = options || {};
   var languages = _.extend({}, LANGUAGE_MAP, options.languages);
-
 
   /**
    * marked.js renderer
@@ -36,7 +28,7 @@ module.exports.init = function(options) {
     if(options.heading && options.heading.length > 0) {
 
       // If defined in options, override the default heading template
-      tmpl = file.readFileSync(options.heading);
+      tmpl = fs.readFileSync(path.resolve(options.heading), 'utf8');
     }
 
     return _.template(tmpl, {
@@ -53,6 +45,7 @@ module.exports.init = function(options) {
 
   // Initialize custom language settings for highlight.js
   hljs.registerLanguage('less', require('./lib/less.js'));
+  hljs.registerLanguage('handlebars', require('./lib/handlebars.js'));
 
   var defaults = {
     renderer: renderer,

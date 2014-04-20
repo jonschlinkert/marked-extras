@@ -1,7 +1,7 @@
 {
   "name": "marked-extras",
   "description": "Extras for marked.js. Utils, language definitions, templates for custom headings and sensible defaults.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/jonschlinkert/marked-extras",
   "author": {
     "name": "Jon Schlinkert",
@@ -22,7 +22,6 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "fs-utils": "~0.1.9",
     "highlight.js": "~8.0.0",
     "lodash": "~2.4.1",
     "marked": "0.3.0",
