@@ -5,10 +5,12 @@
  * Licensed under the MIT License (MIT).
  */
 
-const hljs         = require('highlight.js');
-const _            = require('lodash');
-const marked       = require('marked');
-const renderer     = new marked.Renderer();
+const fs = require('fs');
+const path = require('path');
+const hljs = require('highlight.js');
+const marked = require('marked');
+const renderer = new marked.Renderer();
+const _ = require('lodash');
 
 const LANGUAGE_MAP = require('./lib/lang.js');
 
