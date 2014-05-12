@@ -1,0 +1,242 @@
+<h1>
+  <a name="markdown-basics" class="anchor" href="#markdown-basics">
+    <span class="header-link"></span>
+  </a>Markdown: Basics
+</h1><ul id="ProjectSubmenu">
+    <li><a href="/projects/markdown/" title="Markdown Project Page">Main</a></li>
+    <li><a class="selected" title="Markdown Basics">Basics</a></li>
+    <li><a href="/projects/markdown/syntax" title="Markdown Syntax Documentation">Syntax</a></li>
+    <li><a href="/projects/markdown/license" title="Pricing and License Information">License</a></li>
+    <li><a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a></li>
+</ul>
+
+
+<h2>
+  <a name="getting-the-gist-of-markdown39s-formatting-syntax" class="anchor" href="#getting-the-gist-of-markdown39s-formatting-syntax">
+    <span class="header-link"></span>
+  </a>Getting the Gist of Markdown&#39;s Formatting Syntax
+</h2><p>This page offers a brief overview of what it&#39;s like to use Markdown.
+The <a href="/projects/markdown/syntax" title="Markdown Syntax">syntax page</a> provides complete, detailed documentation for
+every feature, but Markdown should be very easy to pick up simply by
+looking at a few examples of it in action. The examples on this page
+are written in a before/after style, showing example syntax and the
+HTML output produced by Markdown.</p>
+<p>It&#39;s also helpful to simply try Markdown out; the <a href="/projects/markdown/dingus" title="Markdown Dingus">Dingus</a> is a
+web application that allows you type your own Markdown-formatted text
+and translate it to XHTML.</p>
+<p><strong>Note:</strong> This document is itself written using Markdown; you
+can <a href="/projects/markdown/basics.text">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
+<h2>
+  <a name="paragraphs-headers-blockquotes" class="anchor" href="#paragraphs-headers-blockquotes">
+    <span class="header-link"></span>
+  </a>Paragraphs, Headers, Blockquotes
+</h2><p>A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line -- a line containing nothing spaces or tabs is considered
+blank.) Normal paragraphs should not be intended with spaces or tabs.</p>
+<p>Markdown offers two styles of headers: <em>Setext</em> and <em>atx</em>.
+Setext-style headers for <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> are created by
+&quot;underlining&quot; with equal signs (<code>=</code>) and hyphens (<code>-</code>), respectively.
+To create an atx-style header, you put 1-6 hash marks (<code>#</code>) at the
+beginning of the line -- the number of hashes equals the resulting
+HTML header level.</p>
+<p>Blockquotes are indicated using email-style &#39;<code>&gt;</code>&#39; angle brackets.</p>
+<p>Markdown:</p>
+<pre><code>A First Level Header
+====================
+
+A Second Level Header
+<span class="language-comment">---------------------</span>
+
+Now <span class="language-keyword">is</span> <span class="language-keyword">the</span> <span class="language-property">time</span> <span class="language-keyword">for</span> all good men <span class="language-keyword">to</span> come <span class="language-keyword">to</span>
+<span class="language-keyword">the</span> aid <span class="language-keyword">of</span> their country. This <span class="language-keyword">is</span> just a
+regular <span class="language-property">paragraph</span>.
+
+The quick brown fox jumped <span class="language-keyword">over</span> <span class="language-keyword">the</span> lazy
+dog's <span class="language-keyword">back</span>.
+
+<span class="language-comment">### Header 3</span>
+
+&gt; This <span class="language-keyword">is</span> a blockquote.
+&gt; 
+&gt; This <span class="language-keyword">is</span> <span class="language-keyword">the</span> <span class="language-keyword">second</span> <span class="language-property">paragraph</span> <span class="language-keyword">in</span> <span class="language-keyword">the</span> blockquote.
+&gt;
+&gt; <span class="language-comment">## This is an H2 in a blockquote</span>
+</code></pre><p>Output:</p>
+<pre><code>&lt;h1&gt;A First Level Header&lt;/h1&gt;
+
+&lt;h2&gt;A Second Level Header&lt;/h2&gt;
+
+&lt;p&gt;Now <span class="language-keyword">is</span> <span class="language-keyword">the</span> <span class="language-property">time</span> <span class="language-keyword">for</span> all good men <span class="language-keyword">to</span> come <span class="language-keyword">to</span>
+<span class="language-keyword">the</span> aid <span class="language-keyword">of</span> their country. This <span class="language-keyword">is</span> just a
+regular <span class="language-property">paragraph</span>.&lt;/p&gt;
+
+&lt;p&gt;The quick brown fox jumped <span class="language-keyword">over</span> <span class="language-keyword">the</span> lazy
+dog's <span class="language-keyword">back</span>.&lt;/p&gt;
+
+&lt;h3&gt;Header <span class="language-number">3</span>&lt;/h3&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;This <span class="language-keyword">is</span> a blockquote.&lt;/p&gt;
+
+    &lt;p&gt;This <span class="language-keyword">is</span> <span class="language-keyword">the</span> <span class="language-keyword">second</span> <span class="language-property">paragraph</span> <span class="language-keyword">in</span> <span class="language-keyword">the</span> blockquote.&lt;/p&gt;
+
+    &lt;h2&gt;This <span class="language-keyword">is</span> an H2 <span class="language-keyword">in</span> a blockquote&lt;/h2&gt;
+&lt;/blockquote&gt;
+</code></pre><h3>
+  <a name="phrase-emphasis" class="anchor" href="#phrase-emphasis">
+    <span class="header-link"></span>
+  </a>Phrase Emphasis
+</h3><p>Markdown uses asterisks and underscores to indicate spans of emphasis.</p>
+<p>Markdown:</p>
+<pre><code>Some <span class="language-operator">of</span> these <span class="language-keyword">words</span> *are emphasized*.
+Some <span class="language-operator">of</span> these <span class="language-keyword">words</span> <span class="language-title">_are</span> emphasized also_.
+
+Use <span class="language-constant">two</span> asterisks <span class="language-keyword">for</span> **strong emphasis**.
+Or, <span class="language-keyword">if</span> you prefer, __use <span class="language-constant">two</span> underscores instead__.
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>Some of these words <span class="language-tag">&lt;<span class="language-title">em</span>&gt;</span>are emphasized<span class="language-tag">&lt;/<span class="language-title">em</span>&gt;</span>.
+Some of these words <span class="language-tag">&lt;<span class="language-title">em</span>&gt;</span>are emphasized also<span class="language-tag">&lt;/<span class="language-title">em</span>&gt;</span>.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+
+<span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>Use two asterisks for <span class="language-tag">&lt;<span class="language-title">strong</span>&gt;</span>strong emphasis<span class="language-tag">&lt;/<span class="language-title">strong</span>&gt;</span>.
+Or, if you prefer, <span class="language-tag">&lt;<span class="language-title">strong</span>&gt;</span>use two underscores instead<span class="language-tag">&lt;/<span class="language-title">strong</span>&gt;</span>.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+</code></pre><h2>
+  <a name="lists" class="anchor" href="#lists">
+    <span class="header-link"></span>
+  </a>Lists
+</h2><p>Unordered (bulleted) lists use asterisks, pluses, and hyphens (<code>*</code>,
+<code>+</code>, and <code>-</code>) as list markers. These three markers are
+interchangable; this:</p>
+<pre><code><span class="language-bullet">*   </span>Candy.
+<span class="language-bullet">*   </span>Gum.
+<span class="language-bullet">*   </span>Booze.
+</code></pre><p>this:</p>
+<pre><code><span class="language-addition">+   Candy.</span>
+<span class="language-addition">+   Gum.</span>
+<span class="language-addition">+   Booze.</span>
+</code></pre><p>and this:</p>
+<pre><code>-<span class="ruby">   <span class="language-constant">Candy</span>.
+</span>-<span class="ruby">   <span class="language-constant">Gum</span>.
+</span>-<span class="ruby">   <span class="language-constant">Booze</span>.</span>
+</code></pre><p>all produce the same output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">ul</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Candy.<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Gum.<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Booze.<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;/<span class="language-title">ul</span>&gt;</span>
+</code></pre><p>Ordered (numbered) lists use regular numbers, followed by periods, as
+list markers:</p>
+<pre><code><span class="language-bullet">1.  </span>Red
+<span class="language-bullet">2.  </span>Green
+<span class="language-bullet">3.  </span>Blue
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">ol</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Red<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Green<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span>Blue<span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;/<span class="language-title">ol</span>&gt;</span>
+</code></pre><p>If you put blank lines between items, you&#39;ll get <code>&lt;p&gt;</code> tags for the
+list item text. You can create multi-paragraph list items by indenting
+the paragraphs by 4 spaces or 1 tab:</p>
+<pre><code>*   A <span class="language-type">list</span> <span class="language-property">item</span>.
+
+    With multiple <span class="language-property">paragraphs</span>.
+
+*   Another <span class="language-property">item</span> <span class="language-keyword">in</span> <span class="language-keyword">the</span> <span class="language-type">list</span>.
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">ul</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>A list item.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>With multiple paragraphs.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span><span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;<span class="language-title">li</span>&gt;</span><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>Another item in the list.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span><span class="language-tag">&lt;/<span class="language-title">li</span>&gt;</span>
+<span class="language-tag">&lt;/<span class="language-title">ul</span>&gt;</span>
+</code></pre><h3>
+  <a name="links" class="anchor" href="#links">
+    <span class="header-link"></span>
+  </a>Links
+</h3><p>Markdown supports two styles for creating links: <em>inline</em> and
+<em>reference</em>. With both styles, you use square brackets to delimit the
+text you want to turn into a link.</p>
+<p>Inline-style links use parentheses immediately after the link text.
+For example:</p>
+<pre><code>This is an [<span class="language-link_label">example link</span>](<span class="language-link_url">http://example.com/</span>).
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>This is an <span class="language-tag">&lt;<span class="language-title">a</span> <span class="language-attribute">href</span>=<span class="language-value">"http://example.com/"</span>&gt;</span>
+example link<span class="language-tag">&lt;/<span class="language-title">a</span>&gt;</span>.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+</code></pre><p>Optionally, you may include a title attribute in the parentheses:</p>
+<pre><code>This is an [<span class="language-link_label">example link</span>](<span class="language-link_url">http://example.com/ "With a Title"</span>).
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>This is an <span class="language-tag">&lt;<span class="language-title">a</span> <span class="language-attribute">href</span>=<span class="language-value">"http://example.com/"</span> <span class="language-attribute">title</span>=<span class="language-value">"With a Title"</span>&gt;</span>
+example link<span class="language-tag">&lt;/<span class="language-title">a</span>&gt;</span>.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+</code></pre><p>Reference-style links allow you to refer to your links by names, which
+you define elsewhere in your document:</p>
+<pre><code>I get 10 times more traffic from [<span class="language-link_label">Google</span>][<span class="language-link_reference">1</span>] than from
+[<span class="language-link_label">Yahoo</span>][<span class="language-link_reference">2</span>] or [<span class="language-link_label">MSN</span>][<span class="language-link_reference">3</span>].
+
+[<span class="language-link_reference">1</span>]:<span class="language-link_url"> http://google.com/        "Google"</span><span class="language-link_url">
+[2]: http://search.yahoo.com/  "Yahoo Search"</span><span class="language-link_url">
+[3]: http://search.msn.com/    "MSN Search"</span>
+</code></pre><p>Output:</p>
+<pre><code>&lt;p&gt;I <span class="language-built_in">get</span> <span class="language-number">10</span> times more traffic <span class="language-built_in">from</span> &lt;<span class="language-operator">a</span> href=<span class="language-string">"http://google.com/"</span>
+title=<span class="language-string">"Google"</span>&gt;Google&lt;/<span class="language-operator">a</span>&gt; than <span class="language-built_in">from</span> &lt;<span class="language-operator">a</span> href=<span class="language-string">"http://search.yahoo.com/"</span>
+title=<span class="language-string">"Yahoo Search"</span>&gt;Yahoo&lt;/<span class="language-operator">a</span>&gt; <span class="language-operator">or</span> &lt;<span class="language-operator">a</span> href=<span class="language-string">"http://search.msn.com/"</span>
+title=<span class="language-string">"MSN Search"</span>&gt;MSN&lt;/<span class="language-operator">a</span>&gt;.&lt;/p&gt;
+</code></pre><p>The title attribute is optional. Link names may contain letters,
+numbers and spaces, but are <em>not</em> case sensitive:</p>
+<pre><code>I start my morning with a cup of coffee and
+[<span class="language-link_label">The New York Times</span>][<span class="language-link_reference">NY Times</span>].
+
+[<span class="language-link_reference">ny times</span>]:<span class="language-link_url"> http://www.nytimes.com/</span>
+</code></pre><p>Output:</p>
+<pre><code>&lt;p&gt;I start my morning <span class="language-operator">with</span> <span class="language-operator">a</span> cup <span class="language-operator">of</span> coffee <span class="language-operator">and</span>
+&lt;<span class="language-operator">a</span> href=<span class="language-string">"http://www.nytimes.com/"</span>&gt;The New York Times&lt;/<span class="language-operator">a</span>&gt;.&lt;/p&gt;
+</code></pre><h3>
+  <a name="images" class="anchor" href="#images">
+    <span class="header-link"></span>
+  </a>Images
+</h3><p>Image syntax is very much like link syntax.</p>
+<p>Inline (titles are optional):</p>
+<pre><code>![<span class="language-link_label">alt text</span>](<span class="language-link_url">/path/to/img.jpg "Title"</span>)
+</code></pre><p>Reference-style:</p>
+<pre><code>![<span class="language-link_label">alt text</span>][<span class="language-link_reference">id</span>]
+
+[<span class="language-link_reference">id</span>]:<span class="language-link_url"> /path/to/img.jpg "Title"</span>
+</code></pre><p>Both of the above examples produce the same output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">img</span> <span class="language-attribute">src</span>=<span class="language-value">"/path/to/img.jpg"</span> <span class="language-attribute">alt</span>=<span class="language-value">"alt text"</span> <span class="language-attribute">title</span>=<span class="language-value">"Title"</span> /&gt;</span>
+</code></pre><h3>
+  <a name="code" class="anchor" href="#code">
+    <span class="header-link"></span>
+  </a>Code
+</h3><p>In a regular paragraph, you can create code span by wrapping text in
+backtick quotes. Any ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> or
+<code>&gt;</code>) will automatically be translated into HTML entities. This makes
+it easy to use Markdown to write about HTML example code:</p>
+<pre><code>I strongly recommend against <span class="language-keyword">using</span> any `&lt;blink&gt;` tags.
+
+I wish SmartyPants used named entities <span class="language-keyword">like</span> `&amp;mdash;`
+instead <span class="language-keyword">of</span> <span class="language-built_in">decimal</span>-encoded entites <span class="language-keyword">like</span> `&amp;<span class="language-preprocessor">#8212;`.</span>
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>I strongly recommend against using any
+<span class="language-tag">&lt;<span class="language-title">code</span>&gt;</span>&amp;lt;blink&amp;gt;<span class="language-tag">&lt;/<span class="language-title">code</span>&gt;</span> tags.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+
+<span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>I wish SmartyPants used named entities like
+<span class="language-tag">&lt;<span class="language-title">code</span>&gt;</span>&amp;amp;mdash;<span class="language-tag">&lt;/<span class="language-title">code</span>&gt;</span> instead of decimal-encoded
+entites like <span class="language-tag">&lt;<span class="language-title">code</span>&gt;</span>&amp;amp;#8212;<span class="language-tag">&lt;/<span class="language-title">code</span>&gt;</span>.<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+</code></pre><p>To specify an entire block of pre-formatted code, indent every line of
+the block by 4 spaces or 1 tab. Just like with code spans, <code>&amp;</code>, <code>&lt;</code>,
+and <code>&gt;</code> characters will be escaped automatically.</p>
+<p>Markdown:</p>
+<pre><code><span class="language-keyword">If</span> you want your page <span class="language-keyword">to</span> validate under XHTML <span class="language-number">1.0</span> Strict,
+you<span class="language-attribute">'ve</span> got <span class="language-keyword">to</span> put paragraph tags <span class="language-keyword">in</span> your blockquotes:
+
+    &lt;blockquote&gt;
+        &lt;p&gt;<span class="language-keyword">For</span> example.&lt;/p&gt;
+    &lt;/blockquote&gt;
+</code></pre><p>Output:</p>
+<pre><code><span class="language-tag">&lt;<span class="language-title">p</span>&gt;</span>If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:<span class="language-tag">&lt;/<span class="language-title">p</span>&gt;</span>
+
+<span class="language-tag">&lt;<span class="language-title">pre</span>&gt;</span><span class="language-tag">&lt;<span class="language-title">code</span>&gt;</span>&amp;lt;blockquote&amp;gt;
+    &amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+<span class="language-tag">&lt;/<span class="language-title">code</span>&gt;</span><span class="language-tag">&lt;/<span class="language-title">pre</span>&gt;</span>
+</code></pre>
