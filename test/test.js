@@ -20,8 +20,6 @@ var readFile = function(filepath) {
   return file.readFileSync(src);
 };
 
-// console.log(readFile('def_blocks.md'));
-
 
 describe('marked-extras', function () {
   describe('when a string is passed', function () {
@@ -83,12 +81,12 @@ describe('marked-extras', function () {
   });
 });
 
-
 describe('when a heading is passed', function () {
   it('should return HTML with standard ', function (done) {
     var testfile = 'amps_and_angles_encoding';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -100,6 +98,7 @@ describe('when a heading is passed', function () {
     var testfile = 'auto_links';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -111,6 +110,7 @@ describe('when a heading is passed', function () {
     var testfile = 'autolink_lines';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -122,6 +122,7 @@ describe('when a heading is passed', function () {
     var testfile = 'backslash_escapes';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -133,6 +134,7 @@ describe('when a heading is passed', function () {
     var testfile = 'blockquote_list_item';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -144,6 +146,7 @@ describe('when a heading is passed', function () {
     var testfile = 'blockquotes_with_code_blocks';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -155,6 +158,7 @@ describe('when a heading is passed', function () {
     var testfile = 'case_insensitive_refs';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -166,6 +170,7 @@ describe('when a heading is passed', function () {
     var testfile = 'code_blocks';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -177,6 +182,7 @@ describe('when a heading is passed', function () {
     var testfile = 'code_spans';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -188,6 +194,7 @@ describe('when a heading is passed', function () {
     var testfile = 'def_blocks';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -199,6 +206,7 @@ describe('when a heading is passed', function () {
     var testfile = 'double_link';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -210,6 +218,7 @@ describe('when a heading is passed', function () {
     var testfile = 'escaped_angles';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -221,6 +230,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_break.breaks';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -232,6 +242,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_code';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -243,6 +254,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_code_hr_list';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -254,6 +266,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_del';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -265,6 +278,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_em';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -276,6 +290,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_links';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -287,6 +302,7 @@ describe('when a heading is passed', function () {
     var testfile = 'gfm_tables';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -298,6 +314,7 @@ describe('when a heading is passed', function () {
     var testfile = 'hard_wrapped_paragraphs_with_list_like_lines.nogfm';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -309,6 +326,7 @@ describe('when a heading is passed', function () {
     var testfile = 'horizontal_rules';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -320,6 +338,7 @@ describe('when a heading is passed', function () {
     var testfile = 'hr_list_break';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -331,6 +350,7 @@ describe('when a heading is passed', function () {
     var testfile = 'inline_html_advanced';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -342,6 +362,7 @@ describe('when a heading is passed', function () {
     var testfile = 'inline_html_comments';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -353,6 +374,7 @@ describe('when a heading is passed', function () {
     var testfile = 'inline_html_simple';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -364,6 +386,7 @@ describe('when a heading is passed', function () {
     var testfile = 'lazy_blockquotes';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -375,6 +398,7 @@ describe('when a heading is passed', function () {
     var testfile = 'links_inline_style';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -386,6 +410,7 @@ describe('when a heading is passed', function () {
     var testfile = 'links_reference_style';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -397,6 +422,7 @@ describe('when a heading is passed', function () {
     var testfile = 'links_shortcut_references';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -408,6 +434,7 @@ describe('when a heading is passed', function () {
     var testfile = 'list_item_text';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -419,6 +446,7 @@ describe('when a heading is passed', function () {
     var testfile = 'literal_quotes_in_titles';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -430,6 +458,7 @@ describe('when a heading is passed', function () {
     var testfile = 'loose_lists';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -441,6 +470,7 @@ describe('when a heading is passed', function () {
     var testfile = 'main';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -452,6 +482,7 @@ describe('when a heading is passed', function () {
     var testfile = 'markdown_documentation_basics';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -463,6 +494,7 @@ describe('when a heading is passed', function () {
     var testfile = 'markdown_documentation_syntax';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -474,6 +506,7 @@ describe('when a heading is passed', function () {
     var testfile = 'nested_blockquotes';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -485,6 +518,7 @@ describe('when a heading is passed', function () {
     var testfile = 'nested_code';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -496,6 +530,7 @@ describe('when a heading is passed', function () {
     var testfile = 'nested_em';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -507,6 +542,7 @@ describe('when a heading is passed', function () {
     var testfile = 'nested_square_link';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -518,6 +554,7 @@ describe('when a heading is passed', function () {
     var testfile = 'not_a_link';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -529,6 +566,7 @@ describe('when a heading is passed', function () {
     var testfile = 'ordered_and_unordered_lists';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -540,6 +578,7 @@ describe('when a heading is passed', function () {
     var testfile = 'ref_paren';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -551,6 +590,7 @@ describe('when a heading is passed', function () {
     var testfile = 'same_bullet';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -562,6 +602,7 @@ describe('when a heading is passed', function () {
     var testfile = 'strong_and_em_together';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -573,6 +614,7 @@ describe('when a heading is passed', function () {
     var testfile = 'tabs';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -584,6 +626,7 @@ describe('when a heading is passed', function () {
     var testfile = 'text.smartypants';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -595,6 +638,7 @@ describe('when a heading is passed', function () {
     var testfile = 'tidyness';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -606,6 +650,7 @@ describe('when a heading is passed', function () {
     var testfile = 'toplevel_paragraphs.gfm';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
@@ -617,6 +662,7 @@ describe('when a heading is passed', function () {
     var testfile = 'tricky_list';
     var fixture = readFile(testfile + '.md');
     var actual = marked(fixture);
+    file.writeFileSync('test/actual/' + testfile + '.html', actual);
     var expected = readFile(testfile + '.html');
     expect(actual).to.deep.equal(expected);
     done();
