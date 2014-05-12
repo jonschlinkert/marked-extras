@@ -13,12 +13,12 @@ const helper = require('./helpers/utils');
 
 
 /**
- * smatypants
+ * Language tests
  */
 
-describe('smatypants', function () {
-  it('should convert text', function (done) {
-    var testfile = 'smartypants_text';
+describe('amps_and_angles_encoding', function () {
+  it('should convert amps_and_angles_encoding', function (done) {
+    var testfile = 'amps_and_angles_encoding';
     var fixture = helper.readFile(testfile + '.md');
     var actual = marked(fixture);
 

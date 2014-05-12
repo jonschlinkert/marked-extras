@@ -16,15 +16,13 @@ const helper = require('./helpers/utils');
  * paragraphs
  */
 
-describe('toplevel_paragraphs', function () {
-  it('should convert toplevel_paragraphs', function (done) {
-    var testfile = 'toplevel_paragraphs.gfm';
-    var fixture = helper.readFile(testfile + '.md');
-    var actual = marked(fixture);
+describe('paragraphs', function () {
 
-    helper.writeActual('extras', testfile, actual);
-    var expected = helper.readFile(testfile + '.html');
-    expect(actual).to.deep.equal(expected);
-    done();
+  describe('when a simple string is passed', function () {
+    it('it should be wrapped in paragraph tags, ending with a newline', function (done) {
+      var actual = marked('foo');
+      expect(actual).to.deep.equal('<p>foo</p>\n');
+      done();
+    });
   });
 });

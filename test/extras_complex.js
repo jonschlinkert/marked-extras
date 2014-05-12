@@ -13,27 +13,13 @@ const helper = require('./helpers/utils');
 
 
 /**
- * Language tests
+ * complex
  */
 
-describe('amps_and_angles_encoding', function () {
-  it('should convert amps_and_angles_encoding', function (done) {
-    var testfile = 'amps_and_angles_encoding';
-    var fixture = helper.readFile(testfile + '.md');
-    var actual = marked(fixture);
 
-    helper.writeActual('extras', testfile, actual);
-    var expected = helper.readFile(testfile + '.html');
-    expect(actual).to.deep.equal(expected);
-    done();
-  });
-});
-
-
-
-describe('main', function () {
-  it('should convert main', function (done) {
-    var testfile = 'main';
+describe('complex_mixture', function () {
+  it('should convert complex_mixture', function (done) {
+    var testfile = 'complex_mixture';
     var fixture = helper.readFile(testfile + '.md');
     var actual = marked(fixture);
 
@@ -60,19 +46,6 @@ describe('markdown_documentation_basics', function () {
 describe('markdown_documentation_syntax', function () {
   it('should convert markdown_documentation_syntax', function (done) {
     var testfile = 'markdown_documentation_syntax';
-    var fixture = helper.readFile(testfile + '.md');
-    var actual = marked(fixture);
-
-    helper.writeActual('extras', testfile, actual);
-    var expected = helper.readFile(testfile + '.html');
-    expect(actual).to.deep.equal(expected);
-    done();
-  });
-});
-
-describe('tidyness', function () {
-  it('should convert tidyness', function (done) {
-    var testfile = 'tidyness';
     var fixture = helper.readFile(testfile + '.md');
     var actual = marked(fixture);
 
