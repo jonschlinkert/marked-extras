@@ -22,24 +22,26 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "highlight.js": "~8.0.0",
+    "marked": "~0.3.2",
     "lodash": "~2.4.1",
-    "marked": "0.3.0",
-    "underscore.string": "~2.3.3"
+    "highlight.js": "~8.0.0",
+    "chai": "~1.9.1"
   },
   "keywords": [
-    "convert markdown",
-    "gfm markdown",
+    "convert",
     "gfm",
-    "github markdown",
-    "handlebars helper",
+    "github",
     "handlebars",
+    "headings",
     "helper",
     "highlight.js",
-    "markdown headings",
-    "markdown to html",
+    "html",
     "markdown",
     "marked",
     "md"
-  ]
+  ],
+  "devDependencies": {
+    "fs-utils": "~0.4.1",
+    "verb": "^0.2.7"
+  }
 }

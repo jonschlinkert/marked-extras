@@ -5,74 +5,68 @@
  * Licensed under the MIT License (MIT).
  */
 
-const fs = require('fs');
 const path = require('path');
 const hljs = require('highlight.js');
 const marked = require('marked');
-const renderer = new marked.Renderer();
 const _ = require('lodash');
 
+
 const LANGUAGE_MAP = require('./lib/lang.js');
+const slugify = require('./lib/slugify');
 
-// Mix in the methods from underscore string
-_.mixin(require('underscore.string'));
+module.exports = function(str, options) {
+  var renderer = new marked.Renderer();
 
-
-module.exports.init = function(options) {
   options = options || {};
-  var languages = _.extend({}, LANGUAGE_MAP, options.languages);
+  var opts = {};
 
-  /**
-   * marked.js renderer
-   */
-  renderer.heading = function (text, level) {
-    var tmpl = require('./lib/tmpl.js');
-    if(options.heading && options.heading.length > 0) {
-
-      // If defined in options, override the default heading template
-      tmpl = fs.readFileSync(path.resolve(options.heading), 'utf8');
-    }
-
-    return _.template(tmpl, {
-      text: text,
-      level: level,
-      name: _.slugify(text)
-    });
-  };
-
-  hljs.configure({
-    tabReplace: options.tabReplace || ' ',
-    classPrefix: options.prefix || 'language-'
-  });
-
-  // Initialize custom language settings for highlight.js
-  hljs.registerLanguage('less', require('./lib/less.js'));
-  hljs.registerLanguage('handlebars', require('./lib/handlebars.js'));
-
-  var defaults = {
-    renderer: renderer,
+  // Base marked.js Options
+  _.extend(opts, {
     gfm: true,
     tables: true,
     breaks: false,
     pedantic: false,
     sanitize: false,
     smartLists: true,
-    smartypants: false,
+    smartypants: false
+  }, options);
 
+
+  // Allow custom heading templates to be passed
+  renderer.heading = function (text, level) {
+    var tmpl = require('./lib/anchor.js');
+    if(opts.heading && typeof opts.heading === 'function') {
+      tmpl = opts.heading;
+    }
+    return tmpl(text, level, slugify(text));
+  };
+  _.extend(opts, { renderer: renderer });
+
+
+  // highlight.js Options
+  var languages = _.extend({}, LANGUAGE_MAP, opts.languages || {});
+  hljs.configure({
+    tabReplace: opts.tabReplace || ' ',
+    classPrefix: opts.prefix || 'language-'
+  });
+
+  // Initialize custom language settings for highlight.js
+  hljs.registerLanguage('less', require('./lib/less.js'));
+
+  // Defined highlight options in marked.js
+  _.extend(opts, {
     highlight: function (code, lang) {
       try {
         if (languages[lang]) {
           lang = languages[lang];
-        } else {
-          return code;
         }
         return hljs.highlight(lang, code).value;
-      } catch(e) {
+      } catch (e) {
         return hljs.highlightAuto(code).value;
       }
     }
-  };
+  });
 
-  exports.markedDefaults = _.extend({}, defaults, options);
-  return exports;
+  marked.setOptions(opts);
+  return marked(str,  _.extend(opts, options));
 };
